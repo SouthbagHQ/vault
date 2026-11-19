@@ -37,25 +37,7 @@ function signedOut(reason) {
     ${WORDMARK}
     <p class="tagline">The password manager of the Southbag Global Enterprise Network.</p>
     ${reason ? `<div class="error">${esc(reason)}</div>` : ''}
-    <div class="panel">
-      <h2>What this is</h2>
-      <p>Southbag Vault stores your passwords. Other password managers encrypt them, so that
-      nobody can read them. Southbag reviewed this arrangement and found it insufficiently
-      legible. Southbag Vault stores everything in <strong>plaintext</strong>: fully readable,
-      fully auditable, permanently on file.</p>
-      <ul class="plain">
-        <li>Every credential lodged in plaintext. This is the feature.</li>
-        <li>Inspections, amendments, exports and audits itemised and billed.</li>
-        <li>Deletion isn't available. Southbag does not forget.</li>
-      </ul>
-      <p><strong>Do not file a password you actually use.</strong> Kevin already knows it.</p>
-      <p class="fine">Sign in with Southbag Identity. You already have an account.</p>
-      <p><a class="button btn-small" href="/auth/login">Log in</a></p>
-      <p><a class="button btn-large" href="https://support.southbag.cc/ai">What is a password?</a></p>
-      <p><a class="button btn-large" href="https://support.southbag.cc/ai">Request encryption</a></p>
-      <p><a class="button btn-small" href="https://support.southbag.cc/ai">Talk to Kevin</a></p>
-      <p><a class="button btn-large" href="https://banking.southbag.cc">forget everything</a></p>
-    </div>
+    <p><a class="button btn-small" href="/auth/login">Log in</a></p>
     ${FOOTER}`;
 }
 
