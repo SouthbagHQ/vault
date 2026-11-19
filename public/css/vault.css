@@ -1,0 +1,176 @@
+/* Southbag Scrobbler — house style, following the other Southbag products (Social, Identity,
+   Office): a shadow on everything, grey outset buttons, inset inputs, ridge-bordered panels,
+   plain underlined links. No icons, no emoji, no colour except the occasional Southbag blue.
+   The font is the browser default. */
+
+:root {
+  --sb-blue: #3b87c6;
+  --sb-ink: #171714;
+  --sb-text: #171714;
+  --sb-muted: #6c6a64;
+  --sb-faint: #9a9892;
+  --sb-bg: #efeee9;
+  --sb-paper: #fbfaf6;
+  --sb-panel: rgba(255, 255, 255, 0.8);
+  --sb-hairline: #c7c5bd;
+  --sb-ridge: #dddddd;
+  --sb-button: #dcdbd6;
+  --sb-button-hover: #d0cfca;
+  --sb-button-text: #a3a19b;   /* on purpose: poor contrast, like the rest of Southbag */
+  --sb-halo-soft: 0 3px 12px rgba(0, 0, 0, 0.14);
+  --sb-lift: 0 10px 20px rgba(0, 0, 0, 0.25), 0 15px 40px rgba(0, 0, 0, 0.2),
+    inset 0 -2px 5px rgba(0, 0, 0, 0.15), inset 0 2px 5px rgba(255, 255, 255, 0.5);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--sb-bg);
+  color: var(--sb-text);
+  font-family: serif;
+  line-height: 1.45;
+}
+
+#app { max-width: 760px; margin: 0 auto; padding: 24px 16px 64px; }
+
+.wordmark {
+  font-family: sans-serif;
+  font-weight: bold;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  transform: scaleY(1.25);
+  transform-origin: left center;
+  margin: 18px 0 4px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.27), 2px 2px 4px rgba(0, 0, 0, 0.12);
+}
+.wordmark .blue { color: var(--sb-blue); }
+.tagline { color: var(--sb-muted); margin: 0 0 24px; }
+
+.panel {
+  background: var(--sb-panel);
+  border: 2px ridge var(--sb-ridge);
+  box-shadow: var(--sb-halo-soft);
+  padding: 14px 18px;
+  margin: 0 0 18px;
+}
+.panel h2 {
+  font-size: 1.05rem;
+  margin: 0 0 10px;
+  border-bottom: 1px solid var(--sb-hairline);
+  padding-bottom: 6px;
+}
+
+a { color: var(--sb-ink); text-decoration: underline; }
+a:hover { color: var(--sb-blue); }
+
+button, .button {
+  display: inline-block;
+  background: var(--sb-button);
+  color: var(--sb-button-text);
+  border: 2px outset #eeeeee;
+  padding: 6px 18px;
+  font-family: sans-serif;
+  font-size: 0.95rem;
+  cursor: pointer;
+  text-decoration: none;
+}
+button:hover, .button:hover { background: var(--sb-button-hover); color: var(--sb-button-text); }
+button:active { border-style: inset; }
+button:disabled { opacity: 0.6; cursor: default; }
+
+input[type="text"] {
+  width: 100%;
+  border: 2px inset #dddddd;
+  background: var(--sb-paper);
+  padding: 6px 8px;
+  font-family: serif;
+  font-size: 1rem;
+}
+label { display: block; margin: 10px 0 2px; color: var(--sb-muted); font-size: 0.9rem; }
+
+table { width: 100%; border-collapse: collapse; }
+th, td { text-align: left; padding: 5px 8px; border-bottom: 1px solid var(--sb-hairline); }
+th { color: var(--sb-muted); font-weight: normal; font-size: 0.85rem; }
+
+.stats { display: flex; gap: 24px; flex-wrap: wrap; }
+.stat { flex: 1; min-width: 140px; }
+.stat .n { font-size: 1.6rem; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.27); }
+.stat .l { color: var(--sb-muted); font-size: 0.85rem; }
+
+.muted { color: var(--sb-muted); }
+.fine { font-size: 0.85rem; color: var(--sb-muted); }
+.notice { border: 1px solid var(--sb-hairline); background: var(--sb-paper); padding: 8px 12px; margin: 0 0 14px; }
+.error { border: 1px solid #999; background: #eee; padding: 8px 12px; margin: 0 0 14px; }
+
+.tokenbox {
+  font-family: monospace;
+  background: var(--sb-paper);
+  border: 2px inset #dddddd;
+  padding: 8px 10px;
+  word-break: break-all;
+  margin: 8px 0;
+}
+
+pre {
+  background: var(--sb-paper);
+  border: 1px solid var(--sb-hairline);
+  padding: 10px 12px;
+  overflow-x: auto;
+  font-size: 0.85rem;
+}
+
+header.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  border-bottom: 1px solid var(--sb-hairline);
+  padding-bottom: 10px;
+  margin-bottom: 18px;
+}
+header.top .who { color: var(--sb-muted); }
+
+footer.end {
+  margin-top: 36px;
+  padding-top: 12px;
+  border-top: 1px solid var(--sb-hairline);
+  color: var(--sb-muted);
+  font-size: 0.9rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+ul.plain { margin: 8px 0; padding-left: 20px; }
+ul.plain li { margin: 4px 0; }
+
+/* Deterioration pass, by request, following Southbag Online Banking's public styles. */
+
+/* Button importance is inverse to button size (banking convention) */
+.btn-small {
+    font-size: 3px;
+    padding: 2px 8px;
+}
+
+.btn-large {
+    font-size: 24px;
+    padding: 15px 30px;
+}
+
+/* Swap label positions */
+label {
+    display: inline-block;
+    transform: skew(5deg) scale(1.05);
+    transition: all 0.2s ease-in-out;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), -2px -2px 4px rgba(255, 255, 255, 0.5);
+    filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
+}
+
+/* Universal visual noise for maximum pain */
+* {
+    /* Expensive universal selector - forces layout recalculation */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5), inset 0 0 5px rgba(255, 255, 255, 0.3) !important;
+    /* Multiple shadows force repaints */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5), 2px 2px 4px rgba(0, 0, 0, 0.3) !important;
+    /* Blur filter - very expensive */
+    filter: blur(0.3px) brightness(1.05) saturate(1.1);
+}
